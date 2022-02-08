@@ -27,11 +27,28 @@ body{
 }
 
 .container .cigarette{
+    transform-style: preserve-3d;
+    animation: rotate-text 10s linear infinite;
+}
+
+@keyframes rotate-text {
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+.container .cigarette span{
+    letter-spacing: 2px;
     position: absolute;
     font-size: 25px;
     font-weight: 700;
     text-transform: uppercase;
+    transform: translate(-50%,-50%) rotateX(calc(var(--i)*60deg)) translateZ(15px);
 }
+
 
 .container .cigarette span i{
     color: #df9018;
@@ -43,6 +60,7 @@ body{
     color: #ccc;
     text-transform: lowercase;
 }
+
 
 .container .cigarette span i:last-child:after{
     content: 'l';
